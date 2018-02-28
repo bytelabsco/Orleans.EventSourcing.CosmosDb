@@ -1,0 +1,28 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netstandard2.0</TargetFramework>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <None Remove="StoredProcedures\bump-commit.js" />
+    <None Remove="StoredProcedures\commit.js" />
+    <None Remove="Triggers\json-parse-pretrigger.js" />
+    <None Remove="Triggers\json-stringify-posttrigger.js" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <EmbeddedResource Include="StoredProcedures\bump-commit.js" />
+    <EmbeddedResource Include="StoredProcedures\commit.js" />
+    <EmbeddedResource Include="Triggers\json-parse-pretrigger.js" />
+    <EmbeddedResource Include="Triggers\json-stringify-posttrigger.js" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Microsoft.Azure.DocumentDB.Core" Version="1.8.2" />
+    <PackageReference Include="Microsoft.Orleans.Core.Abstractions" Version="2.0.0-beta3" />
+    <PackageReference Include="Microsoft.Orleans.EventSourcing" Version="2.0.0-beta3" />
+    <PackageReference Include="Microsoft.Orleans.OrleansRuntime" Version="2.0.0-beta3" />
+  </ItemGroup>
+
+</Project>
